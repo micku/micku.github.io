@@ -10,6 +10,8 @@ html {
 
 a {
     color: #F4F4F4;
+    text-decoration: none;
+    transition: .2s;
 }
 
 a:hover {
@@ -19,6 +21,24 @@ a:hover {
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
-    color: #87D69B;
+    color: #7ED0D6;
     text-align: center;
+}
+
+ol {
+    font-style: italic;
+    font-size: .8em;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    border-left: solid 1px white;
+}
+
+li a {
+    padding-left: 12px;
+    line-height: 1.5em;
+    font-size: 1.7em;
+    font-style: normal;
 }

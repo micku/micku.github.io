@@ -83,7 +83,7 @@
 
 
 	// module
-	exports.push([module.id, "html, body {\n    font-family: 'Inconsolata', monospace;\n    background-color: #3E4147;\n    color: #F4F4F4;\n}\n\nhtml {\n    padding: 20px;\n}\n\na {\n    color: #F4F4F4;\n}\n\na:hover {\n    color: #7ED0D6;\n}\n\nh1 {\n    font-family: 'Montserrat', sans-serif;\n    font-weight: normal;\n    color: #87D69B;\n    text-align: center;\n}\n", ""]);
+	exports.push([module.id, "html, body {\n    font-family: 'Inconsolata', monospace;\n    background-color: #3E4147;\n    color: #F4F4F4;\n}\n\nhtml {\n    padding: 20px;\n}\n\na {\n    color: #F4F4F4;\n    text-decoration: none;\n    transition: .2s;\n}\n\na:hover {\n    color: #7ED0D6;\n}\n\nh1 {\n    font-family: 'Montserrat', sans-serif;\n    font-weight: normal;\n    color: #7ED0D6;\n    text-align: center;\n}\n\nol {\n    font-style: italic;\n    font-size: .8em;\n}\n\nli {\n    margin: 0;\n    padding: 0;\n    border-left: solid 1px white;\n}\n\nli a {\n    padding-left: 12px;\n    line-height: 1.5em;\n    font-size: 1.7em;\n    font-style: normal;\n}\n", ""]);
 
 	// exports
 
