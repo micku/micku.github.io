@@ -1,0 +1,27 @@
+{
+  "name": "micku.github.io",
+  "version": "1.0.0",
+  "description": "Colors: http://www.colourlovers.com/palette/4279516/PWC_V21 http://www.colourlovers.com/palette/4250694/PWC_v19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micku/micku.github.io.git"
+  },
+  "author": "Michele Gargiulo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micku/micku.github.io/issues"
+  },
+  "homepage": "https://github.com/micku/micku.github.io#readme",
+  "devDependencies": {
+    "css-loader": "^0.26.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0"
+  }
+}

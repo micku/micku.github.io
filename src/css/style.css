@@ -1,0 +1,24 @@
+html, body {
+    font-family: 'Inconsolata', monospace;
+    background-color: #3E4147;
+    color: #F4F4F4;
+}
+
+html {
+    padding: 20px;
+}
+
+a {
+    color: #F4F4F4;
+}
+
+a:hover {
+    color: #7ED0D6;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    color: #87D69B;
+    text-align: center;
+}
