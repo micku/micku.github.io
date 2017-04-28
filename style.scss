@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=VT323|Roboto+Mono');
+
+
+$sm-desk: "(min-width: 768px)";
+$md-desk: "(min-width: 1024px)";
+$lg-desk: "(min-width: 1440px)";
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+html, body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  background: -webkit-linear-gradient(12deg, rgb(30, 43, 54), rgb(35, 58, 80));
+  background: linear-gradient(12deg, rgb(30, 43, 54), rgb(35, 58, 80));
+  // background: #2A3B4B;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
+}
+
+ul {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;  flex-flow: row wrap;
+  
+  @media #{$sm-desk} {
+    width: 60%;
+  }
+}
+
+.wr {
+  // background: white;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+li {
+  display: flex;
+  margin: 8px auto;
+}
+
+li a {
+  font-family: 'VT323','Roboto Mono', monospace;
+  
+  text-decoration:none;
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;  
+  display: block;
+  margin: 0 auto;
+  transition: all .2s ease-in-out;
+  opacity: .8;
+  // background: black;
+  
+  display: flex;
+  flex-grow: 1;
+  
+  @include responsive-font(1.2vw, 16px, 108px, 16px);
+
+  /*@media #{$sm-desk} {
+    font-size: 1.3vw;
+  }
+
+  @media #{$md-desk} {
+    font-size: 1.1vw;
+  }
+
+  @media #{$lg-desk} {
+    font-size: 1.2vw;
+  }*/
+}
+
+li a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+li a:before {
+  content:'';
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  background: #ffe13b;
+  bottom: 2px;
+  right: -12px;
+  transition: all .2s ease-in;
+  opacity: 0;
+  border-radius: 2px;
+}
+
+
+li:hover a:before {
+  animation: blinker .5s cubic-bezier(.15, 0, 1, 1) infinite alternate;    
+}
+
+.info-wrap {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-left: 60px;
+  padding-bottom: 30px;
+}
+
+.info-wrap p {
+  color: #fff;  
+  font-size: 2vw;
+  margin: 0;
+  position: relative;
+  
+  @include responsive-font(2vw, 44px, 106px, 44px);  
+}
+
+.info-wrap p:last-child {
+  
+  font-family: 'VT323', monospace;
+  color: #ffe13b;  
+  text-transform: uppercase;
+  font-size: 0.55vw;
+  letter-spacing: 0.205em;
+  padding-left: 3px;
+  margin-top: 5px;
+  display: inline-block;
+  
+  @include responsive-font(0.85vw, 16px, 106px, 12px);  
+}
+
+.info-wrap p:last-child span {
+  color: #ffe13b;
+}
+
+.reveal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: 18px;  
+  animation: type-1 2s steps(19, end) forwards, type-2 1s steps(9, end) forwards, type-3 .8s steps(8, end) forwards;
+  -webkit-animation-delay: 0s, 5s, 9s;
+  animation-delay: 0s, 5s, 9s;
+  background: #1F2D39;
+  
+  &:before {
+    content:'';
+    position: absolute;
+    width: 7px;
+    height: 2px;
+    background: #ffe13b;
+    bottom: 0px;
+    left: 0px;
+    transition: all .2s ease-in;
+    opacity: 0;
+    border-radius: 2px;
+    animation: blinker .5s cubic-bezier(.15, 0, 1, 1) infinite alternate;
+  }
+}
+
+.glitch {
+  color:#1F2D3A;
+  font-size: 25vw;
+  font-weight: 700;
+  position: absolute;
+  line-height: 1.2;
+  margin-top: -5%;
+  
+  @include responsive-font(35vw, 200px, 500px, 12px);  
+}
+.glitch:before,
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.glitch:before {
+  /* variation */
+  left: 5px;
+  text-shadow: -1px 0 rgba(255,0,0,.3);
+  clip-path: polygon(0% 30%, 100% 30%, 100% 60%, 0% 60%);
+  animation: noise-anim-1 2s infinite linear alternate-reverse;
+  filter: contrast(102%);
+  /* important: opaque background masks the original */
+  // background: #2A3B4B;
+  background: inherit;
+}
+.glitch:after {
+  /* variation */
+  left: -3px;
+  text-shadow: -1px 0 rgba(0,0,255,.3); 
+  
+  /* ... anything needed to make it identical */
+  clip-path: polygon(0% 30%, 100% 30%, 100% 60%, 0% 60%);
+  animation: noise-anim-2 2s infinite linear alternate-reverse;
+  
+  filter: contrast(102%);
+  /* important: opaque background masks the original */
+  // background: #2A3B4B;
+  background: inherit;
+}
+
+@keyframes noise-anim-1 { 
+  $steps:10;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      $random1: random(300)/100;
+      $random2: random(300)/100;
+      clip-path:polygon(0% percentage($random1), 100% percentage($random1), 100% percentage($random2), 0% percentage($random2));
+    }
+  }
+}
+
+
+@keyframes noise-anim-2 { 
+  $steps:10;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      $random1: random(300)/100;
+      $random2: random(300)/100;
+      clip-path:polygon(0% percentage($random1), 100% percentage($random1), 100% percentage($random2), 0% percentage($random2));
+    }
+  }
+}
+
+@keyframes blinker { to { opacity: 1; } }
+
+@keyframes type-1 {
+  from { width: 100% }
+  to { width: 47% }  
+}
+@keyframes type-2 {
+  from { width: 47% }
+  to { width: 20% }
+  
+}
+@keyframes type-3 {
+  from { width: 20% }
+  to { width: 0% }
+}
+
+
+
+@keyframes blinking {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffe13b; }
+}
