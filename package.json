@@ -1,0 +1,25 @@
+{
+  "name": "grg.io",
+  "version": "1.0.0",
+  "description": "grg.io - Kindly crafted by [@steeeeee](https://github.com/steeeeee).",
+  "main": "index.html",
+  "dependencies": {
+    "node-sass": "^4.5.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3"
+  },
+  "scripts": {
+    "deploy": "./node_modules/.bin/node-sass style.scss dist/style.css --output-style compressed && cp index.html dist/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micku/micku.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micku/micku.github.io/issues"
+  },
+  "homepage": "https://grg.io"
+}
