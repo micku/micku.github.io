@@ -152,8 +152,8 @@ li:hover a:before {
   font-size: 0.55vw;
   letter-spacing: 0.205em;
   padding-left: 63px;
-  padding-bottom: 30px;
   margin-top: 5px;
+  margin-bottom: 30px;
   display: inline-block;
   
   @include responsive-font(0.85vw, 16px, 106px, 12px);  
