@@ -132,8 +132,6 @@ li:hover a:before {
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding-left: 60px;
-  padding-bottom: 30px;
 }
 
 .info-wrap p {
@@ -141,6 +139,7 @@ li:hover a:before {
   font-size: 2vw;
   margin: 0;
   position: relative;
+  padding-left: 60px;
   
   @include responsive-font(2vw, 44px, 106px, 44px);  
 }
@@ -161,6 +160,7 @@ li:hover a:before {
 
 .info-wrap p:last-child span {
   color: #ffe13b;
+  padding-bottom: 30px;
 }
 
 .reveal {
